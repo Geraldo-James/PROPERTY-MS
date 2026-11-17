@@ -6,18 +6,25 @@ import {
   Sun,
   Menu,
   X,
+  ChevronRight,
+  Home,
+  Info,
+  Layers,
+  Building2,
+  CreditCard,
+  Phone,
 } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    "Home",
-    "About",
-    "Features",
-    "Properties",
-    "Pricing",
-    "Contact",
+    { name: "Home", icon: Home },
+    { name: "About", icon: Info },
+    { name: "Features", icon: Layers },
+    { name: "Properties", icon: Building2 },
+    { name: "Pricing", icon: CreditCard },
+    { name: "Contact", icon: Phone },
   ];
 
   return (
@@ -42,11 +49,11 @@ export function Navbar() {
       <div className="hidden items-center gap-1 font-medium text-slate-700 min-[1366px]:flex xl:gap-2">
         {navLinks.map((link) => (
           <a
-            key={link}
+            key={link.name}
             href="#"
             className="group relative flex items-center whitespace-nowrap rounded-2xl px-3 py-3 text-base font-medium text-slate-900 transition-colors duration-300 hover:bg-blue-50 hover:text-blue-600 xl:px-4"
           >
-            {link}
+            {link.name}
             <span className="absolute bottom-1.5 left-1/2 h-1 w-8 -translate-x-1/2 origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
           </a>
         ))}
@@ -95,35 +102,95 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="absolute left-0 top-full z-50 w-full border-t border-slate-200 bg-white px-5 py-4 shadow-lg min-[1366px]:hidden">
-          <div className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+      {/* Mobile Background Overlay */}
+      <div
+        onClick={() => setIsMenuOpen(false)}
+        className={`fixed inset-0 z-40 bg-slate-950/30 transition-opacity duration-300 ease-in-out min-[1366px]:hidden ${
+          isMenuOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+        aria-hidden="true"
+      ></div>
+
+      {/* Sliding Mobile Sidebar */}
+      <div
+        className={`fixed right-0 top-0 z-50 flex h-dvh w-96 max-w-[85vw] flex-col overflow-y-auto border-l border-slate-200 bg-white px-5 py-6 shadow-2xl transition-transform duration-300 ease-in-out min-[1366px]:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between border-b border-slate-200 pb-5">
+          <div className="flex items-center gap-1">
+            <img
+              src="../Gradient_Blue_House_Logo_with_Swoosh.png"
+              alt="Property-Image Logo"
+              className="h-10 w-12 object-fit"
+            />
+
+            <p className="whitespace-nowrap text-xl font-extrabold text-black">
+              <span className="text-[#0B1B3A]">Property</span>
+              <span className="bg-linear-to-r from-blue-600 to-sky-400 bg-clip-text text-transparent">
+                MS
+              </span>
+            </p>
+          </div>
+
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="cursor-pointer rounded-lg p-2 text-[#0B1B3A] transition-colors hover:bg-blue-50 hover:text-blue-600"
+            aria-label="Close navigation menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Sidebar Navigation Links */}
+        <div className="mt-6 flex flex-col gap-3">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
               <a
-                key={link}
+                key={link.name}
                 href="#"
                 onClick={() => setIsMenuOpen(false)}
-                className="rounded-lg px-4 py-3 text-base font-medium text-slate-800 transition-colors hover:bg-blue-50 hover:text-blue-600"
+                tabIndex={isMenuOpen ? 0 : -1}
+                className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-base font-medium text-slate-800 shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md"
               >
-                {link}
+                <span className="flex items-center gap-3">
+                  <Icon
+                    size={19}
+                    strokeWidth={1.8}
+                    className="text-slate-500 transition-colors duration-300 group-hover:text-blue-600"
+                  />
+                  {link.name}
+                </span>
+
+                <ChevronRight
+                  size={19}
+                  strokeWidth={1.8}
+                  className="text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-600"
+                />
               </a>
-            ))}
-          </div>
-
-          <div className="mt-3 flex flex-col gap-3 border-t border-slate-200 pt-4">
-            <button className="flex cursor-pointer items-center justify-center gap-2 rounded-4xl border border-slate-300 px-5 py-3 font-medium text-[#0B1B3A] hover:bg-slate-50">
-              <UserCircle size={20} />
-              Login
-            </button>
-
-            <button className="flex cursor-pointer items-center justify-center gap-2 rounded-4xl bg-linear-to-r from-blue-600 to-sky-400 px-5 py-3 font-semibold text-white transition-all hover:from-blue-700 hover:to-sky-500">
-              Get started
-              <ArrowRight size={18} />
-            </button>
-          </div>
+            );
+          })}
         </div>
-      )}
+
+        {/* Sidebar Actions */}
+        <div className="mt-auto flex flex-col gap-3 border-t border-slate-200 pt-5">
+          <button className="flex cursor-pointer items-center justify-center gap-2 rounded-4xl border border-slate-300 px-5 py-3 font-medium text-[#0B1B3A] hover:bg-slate-50">
+            <UserCircle size={20} />
+            Login
+          </button>
+
+          <button className="flex cursor-pointer items-center justify-center gap-2 rounded-4xl bg-linear-to-r from-blue-600 to-sky-400 px-5 py-3 font-semibold text-white transition-all hover:from-blue-700 hover:to-sky-500">
+            Get started
+            <ArrowRight size={18} />
+          </button>
+        </div>
+      </div>
     </nav>
   );
 }

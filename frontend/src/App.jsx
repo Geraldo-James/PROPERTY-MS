@@ -4,6 +4,7 @@ import  TrustedPartnersSection  from "./components/TrustedPartnersSections.jsx"
 import FeaturesSection from "./components/FeaturesSection.jsx";
 import  FeaturedProperties from "./components/PropertyCard.jsx"
 import Testimonials from "./components/Testimonials.jsx";
+import footer from "./components/footer.jsx"
 
 function App() {
  

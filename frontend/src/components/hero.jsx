@@ -1,3 +1,4 @@
+
 import Hero_Image from  "../assets/Twilight_Luxury_Villa_and_Reflective_Driveway.png"
 import {ChevronDown,ShieldCheck, House,ArrowRight,Play,Building2,Users,ReceiptText,ChartNoAxesCombined,} from "lucide-react";
 
@@ -22,7 +23,7 @@ export function Hero(){
                 </span>
                 Smart Property Management
               </span>
-              <h1 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
+              <h1 className="mt-5 text-[clamp(2rem,4.5vw,3.75rem)] font-bold leading-tight">
                 Manage Your Properties
                 <br />
                 Smarter, Easier &{" "}

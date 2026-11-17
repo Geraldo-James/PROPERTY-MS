@@ -27,7 +27,7 @@ const testimonials = [
     image: "/images/headshot2.png",
     rating: 5,
     quote:
-      "I appreciate having a more organized rental experience. It is easier to keep track of important rental information.",
+      "I appreciate having a more organized rental experience. It is easier to keep track of important rental information. And you to also",
   },
   {
     id: 3,

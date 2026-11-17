@@ -4,14 +4,14 @@ import { ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 const partners = [
   {
     name: "Luxe Homes",
-    subtitle: "PROPERTY SOLUTIONS",
+    subtitle: "LUXURY LIVING",
     logo: "/images/luxe-homes-pv.png",
     accent: "#38A5FF",
     corner: "from-blue-200/80",
   },
   {
     name: "GreenVista",
-    subtitle: "PROPERTIES",
+    subtitle: "PROPERTY CARE",
     logo: "/images/greenvista-pv.png",
     accent: "#65B82E",
     corner: "from-green-200/80",
@@ -25,14 +25,14 @@ const partners = [
   },
   {
     name: "PrimeStay",
-    subtitle: "PROPERTY MANAGEMENT",
+    subtitle: "PREMIUM STAYS",
     logo: "/images/primestay-pv.png",
     accent: "#12BCEB",
     corner: "from-cyan-200/80",
   },
   {
     name: "HomeBridge",
-    subtitle: "REALTY GROUP",
+    subtitle: "PROPERTY GROUP",
     logo: "/images/homebridge-pv.png",
     accent: "#7952FF",
     corner: "from-violet-200/80",

@@ -39,7 +39,7 @@ export function Navbar() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden items-center gap-1 font-medium text-slate-700 lg:flex xl:gap-2">
+      <div className="hidden items-center gap-1 font-medium text-slate-700 min-[1366px]:flex xl:gap-2">
         {navLinks.map((link) => (
           <a
             key={link}
@@ -53,7 +53,7 @@ export function Navbar() {
       </div>
 
       {/* Desktop Actions */}
-      <div className="hidden shrink-0 items-center gap-3 lg:flex xl:gap-4">
+      <div className="hidden shrink-0 items-center gap-3 min-[1366px]:flex xl:gap-4">
         <div className="flex items-center gap-3">
           <button
             className="cursor-pointer text-[#0B1B3A] transition-colors hover:text-blue-600"
@@ -77,7 +77,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile Actions */}
-      <div className="flex items-center gap-3 lg:hidden">
+      <div className="flex items-center gap-3 min-[1366px]:hidden">
         <button
           className="cursor-pointer text-[#0B1B3A] hover:text-blue-600"
           aria-label="Toggle theme"
@@ -97,7 +97,7 @@ export function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="absolute left-0 top-full z-50 w-full border-t border-slate-200 bg-white px-5 py-4 shadow-lg lg:hidden">
+        <div className="absolute left-0 top-full z-50 w-full border-t border-slate-200 bg-white px-5 py-4 shadow-lg min-[1366px]:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a

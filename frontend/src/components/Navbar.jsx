@@ -27,7 +27,7 @@ export function Navbar() {
         <img
           src="../Gradient_Blue_House_Logo_with_Swoosh.png"
           alt="Property-Image Logo"
-          className="h-10 w-12 object-contain sm:h-12 sm:w-14"
+          className="h-10 w-12 object-fit sm:h-12 sm:w-14"
         />
 
         <p className="whitespace-nowrap text-xl font-extrabold text-black sm:text-2xl">

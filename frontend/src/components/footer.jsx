@@ -12,15 +12,16 @@ import {
   Mail,
   MapPin,
   Phone,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Github,
+  BriefcaseBusiness,
+  Camera,
+  Code2,
+  UsersRound,
   ChevronRight,
   MoveUpRight,
+  CheckCircle2,
 } from "lucide-react";
 
-export function Footer() {
+export default function Home_Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -47,64 +48,60 @@ export function Footer() {
     { name: "Terms & Conditions", href: "#terms" },
   ];
 
+  const socialLinks = [
+    { name: "LinkedIn", icon: BriefcaseBusiness, href: "#" },
+    { name: "Instagram", icon: Camera, href: "#" },
+    { name: "GitHub", icon: Code2, href: "#" },
+    { name: "Community", icon: UsersRound, href: "#" },
+  ];
+
   return (
     <footer className="relative overflow-hidden bg-[#061A38] text-white">
 
-      {/* Decorative background effects */}
-      <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-blue-600/15 blur-3xl"></div>
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl"></div>
+      {/* Background Decorations */}
+      <div className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 sm:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
 
-        {/* Top CTA Section */}
-        <div className="relative mb-16 overflow-hidden rounded-3xl border border-white/10 bg-linear-to-r from-blue-600 to-sky-500 px-7 py-10 shadow-2xl shadow-blue-950/20 sm:px-10 lg:flex lg:items-center lg:justify-between lg:px-14">
+        {/* Contact Banner */}
+        <div className="flex flex-col gap-6 border-b border-white/10 py-10 md:flex-row md:items-center md:justify-between">
 
-          <div className="pointer-events-none absolute -right-10 -top-20 h-64 w-64 rounded-full border border-white/10"></div>
-          <div className="pointer-events-none absolute -right-2 -top-12 h-48 w-48 rounded-full border border-white/10"></div>
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-blue-400/20 bg-blue-500/10 text-sky-400">
+              <Building2 size={23} />
+            </div>
 
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white">
-              <Building2 size={16} />
-              Your Property Management Partner
-            </span>
+            <div>
+              <p className="text-lg font-bold text-white sm:text-xl">
+                Better Property Management Starts Here.
+              </p>
 
-            <h2 className="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
-              Ready to Manage Your Properties Smarter?
-            </h2>
-
-            <p className="mt-3 max-w-xl text-sm leading-7 text-blue-50 sm:text-base">
-              Bring your properties, tenants, and payments together in one
-              organised platform. Experience a smarter way to manage.
-            </p>
+              <p className="mt-1 max-w-xl text-sm leading-6 text-slate-400">
+                Bring your properties, tenants, and payments together
+                with a smarter management experience.
+              </p>
+            </div>
           </div>
 
-          <div className="relative z-10 mt-7 flex shrink-0 flex-wrap gap-3 lg:mt-0 lg:ml-8">
-            <a
-              href="#properties"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-blue-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            >
-              Explore Properties
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/20"
-            >
-              Contact Us
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-linear-to-r from-blue-600 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-950/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
+            Get Started
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </a>
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-12 pb-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+        <div className="grid grid-cols-1 gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 
           {/* Brand Information */}
-          <div className="lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-4">
+
             <a href="#" className="mb-5 inline-flex items-center gap-2">
               <img
                 src="../Gradient_Blue_House_Logo_with_Swoosh.png"
@@ -121,32 +118,41 @@ export function Footer() {
             </a>
 
             <p className="max-w-sm text-sm leading-7 text-slate-400">
-              PropertyMS is a modern property management platform designed
-              to simplify how landlords, tenants, and property teams manage
-              properties, units, tenancies, and payments.
+              PropertyMS is a modern property management platform
+              designed to simplify how landlords, tenants, and property
+              teams manage properties, units, tenancies, and payments.
             </p>
 
+            {/* Brand Highlights */}
+            <div className="mt-6 flex flex-col gap-3">
+              <div className="flex items-center gap-2 text-sm text-slate-400">
+                <CheckCircle2 size={16} className="text-sky-400" />
+                Simplified property management
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-slate-400">
+                <CheckCircle2 size={16} className="text-sky-400" />
+                Organised tenant and payment records
+              </div>
+            </div>
+
             {/* Social Links */}
-            <div className="mt-7">
+            <div className="mt-8">
               <p className="mb-4 text-sm font-semibold text-white">
-                Connect with us
+                Follow our journey
               </p>
 
               <div className="flex items-center gap-3">
-                {[
-                  { icon: Linkedin, href: "#", label: "LinkedIn" },
-                  { icon: Facebook, href: "#", label: "Facebook" },
-                  { icon: Instagram, href: "#", label: "Instagram" },
-                  { icon: Github, href: "#", label: "GitHub" },
-                ].map((social) => {
+                {socialLinks.map((social) => {
                   const Icon = social.icon;
 
                   return (
                     <a
-                      key={social.label}
+                      key={social.name}
                       href={social.href}
-                      aria-label={social.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:bg-blue-500 hover:text-white"
+                      aria-label={social.name}
+                      title={social.name}
+                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:bg-blue-600 hover:text-white"
                     >
                       <Icon size={18} strokeWidth={1.8} />
                     </a>
@@ -158,8 +164,8 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="mb-6 text-base font-bold text-white">
-              Quick Links
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
+              Explore
             </h3>
 
             <ul className="flex flex-col gap-4">
@@ -180,9 +186,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Our Services */}
-          <div className="lg:col-span-3">
-            <h3 className="mb-6 text-base font-bold text-white">
+          {/* Services */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Our Solutions
             </h3>
 
@@ -199,7 +205,7 @@ export function Footer() {
                       <Icon
                         size={17}
                         strokeWidth={1.8}
-                        className="text-blue-400 transition-transform duration-300 group-hover:scale-110"
+                        className="shrink-0 text-blue-400 transition-transform duration-300 group-hover:scale-110"
                       />
                       {service.name}
                     </a>
@@ -209,9 +215,33 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Support */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
+              Support
+            </h3>
+
+            <ul className="flex flex-col gap-4">
+              {supportLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-sky-400"
+                  >
+                    <ChevronRight
+                      size={15}
+                      className="text-slate-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-sky-400"
+                    />
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact Information */}
-          <div className="lg:col-span-3">
-            <h3 className="mb-6 text-base font-bold text-white">
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Get in Touch
             </h3>
 
@@ -220,14 +250,17 @@ export function Footer() {
             </p>
 
             <div className="flex flex-col gap-5">
+
               <a
                 href="#contact"
                 className="group flex items-start gap-3 text-sm text-slate-400 transition-colors hover:text-sky-400"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-blue-400">
-                  <Headset size={17} />
-                </span>
-                <span className="pt-1">
+                <Headset
+                  size={19}
+                  className="mt-0.5 shrink-0 text-blue-400"
+                />
+
+                <span>
                   <span className="block font-semibold text-white">
                     Customer Support
                   </span>
@@ -241,10 +274,12 @@ export function Footer() {
                 href="#contact"
                 className="group flex items-start gap-3 text-sm text-slate-400 transition-colors hover:text-sky-400"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-blue-400">
-                  <Mail size={17} />
-                </span>
-                <span className="pt-1">
+                <Mail
+                  size={19}
+                  className="mt-0.5 shrink-0 text-blue-400"
+                />
+
+                <span>
                   <span className="block font-semibold text-white">
                     Send an Enquiry
                   </span>
@@ -258,10 +293,31 @@ export function Footer() {
                 href="#contact"
                 className="group flex items-start gap-3 text-sm text-slate-400 transition-colors hover:text-sky-400"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-blue-400">
-                  <MapPin size={17} />
+                <Phone
+                  size={19}
+                  className="mt-0.5 shrink-0 text-blue-400"
+                />
+
+                <span>
+                  <span className="block font-semibold text-white">
+                    Call Our Team
+                  </span>
+                  <span className="mt-1 block text-xs text-slate-500">
+                    Speak with our team
+                  </span>
                 </span>
-                <span className="pt-1">
+              </a>
+
+              <a
+                href="#contact"
+                className="group flex items-start gap-3 text-sm text-slate-400 transition-colors hover:text-sky-400"
+              >
+                <MapPin
+                  size={19}
+                  className="mt-0.5 shrink-0 text-blue-400"
+                />
+
+                <span>
                   <span className="block font-semibold text-white">
                     Our Location
                   </span>
@@ -270,6 +326,7 @@ export function Footer() {
                   </span>
                 </span>
               </a>
+
             </div>
           </div>
         </div>
@@ -287,6 +344,7 @@ export function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-slate-500 sm:gap-7">
+
               <a
                 href="#privacy"
                 className="transition-colors hover:text-sky-400"
@@ -311,9 +369,11 @@ export function Footer() {
                   className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </a>
+
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   );

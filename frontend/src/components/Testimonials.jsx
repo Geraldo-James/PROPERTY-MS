@@ -17,7 +17,7 @@ const testimonials = [
     image: "../images/headshot1.png",
     rating: 5,
     quote:
-      "PropertyMS has made managing my properties easier. I can organize tenant information and keep track of payments in one place. but to talk of it",
+      "PropertyMS has made managing my properties easier. I can organize tenant information and keep track of payments in one place.",
   },
   {
     id: 2,

@@ -68,26 +68,26 @@ export default function FeaturesSection() {
               <ShieldCheck size={16} strokeWidth={2.2} />
             </span>
 
-            <span className="whitespace-nowrap text-[11px] font-semibold tracking-[-0.01em] text-[#174477]  sm:text-[15px]">
+            <span className="whitespace-nowrap text-xs font-semibold tracking-[-0.01em] text-[#174477] sm:text-base">
               Why Choose PropertyMS
             </span>
           </div>
 
-          <h2 className="max-w-md text-[1.8rem] font-extrabold leading-[1.12] tracking-[-0.04em] text-[#0B1B3A] sm:text-3xl lg:text-[2rem] xl:text-[2.35rem]">
+          <h2 className="max-w-md text-[2rem] font-extrabold leading-[1.15] tracking-[-0.04em] text-[#0B1B3A] sm:text-4xl lg:text-[2.25rem] xl:text-[2.6rem]">
             Everything You Need in{" "}
             <span className="bg-linear-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
               One Place
             </span>
           </h2>
 
-          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-600 sm:text-[15px] sm:leading-7">
+          <p className="mt-4 max-w-sm text-base leading-7 text-slate-600 sm:text-[17px] sm:leading-8">
             From tenant management to payment tracking, manage your property
             business efficiently from one simple platform.
           </p>
 
           <a
             href="/features"
-            className="mt-6 inline-flex min-h-11 items-center gap-3 rounded-full bg-linear-to-r from-blue-600 to-sky-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_7px_20px_rgba(37,99,235,0.22)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_11px_26px_rgba(37,99,235,0.3)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+            className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full bg-linear-to-r from-blue-600 to-sky-500 px-6 py-3 text-base font-semibold text-white shadow-[0_7px_20px_rgba(37,99,235,0.22)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_11px_26px_rgba(37,99,235,0.3)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
           >
             Explore Features
             <ArrowRight size={17} />
@@ -121,10 +121,10 @@ export default function FeaturesSection() {
 
               {/* Feature text */}
               <div className="min-w-0 pt-0.5">
-                <h3 className="text-[13px] font-bold leading-5 text-[#174477] sm:text-sm">
+                <h3 className="text-sm font-bold leading-6 text-[#174477] sm:text-base">
                   {title}
                 </h3>
-                <p className="mt-1 text-xs leading-[1.65] text-slate-500">
+                <p className="mt-1 text-sm leading-relaxed text-slate-500">
                   {description}
                 </p>
               </div>
@@ -177,11 +177,11 @@ export default function FeaturesSection() {
 
             {/* Badge text */}
             <div className="min-w-0">
-              <p className="text-xs font-bold leading-5 text-[#0B1B3A] sm:text-sm">
+              <p className="text-sm font-bold leading-6 text-[#0B1B3A] sm:text-base">
                 Secure &amp; reliable
               </p>
 
-              <p className="text-[11px] leading-4 text-slate-500 sm:text-xs">
+              <p className="text-xs leading-5 text-slate-500 sm:text-sm">
                 Your properties, organized.
               </p>
             </div>
@@ -191,4 +191,3 @@ export default function FeaturesSection() {
     </section>
   );
 }
-

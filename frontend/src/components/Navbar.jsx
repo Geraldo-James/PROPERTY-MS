@@ -55,7 +55,7 @@ export function Navbar() {
           >
             <span className="relative inline-block">
               {link.name}
-              <span className="absolute bottom-[-5px] left-0 h-1 w-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
+              <span className="absolute -bottom-1.25 left-0 h-1 w-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
             </span>
           </a>
         ))}

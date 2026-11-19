@@ -53,8 +53,10 @@ export function Navbar() {
             href="#"
             className="group relative flex items-center whitespace-nowrap rounded-2xl px-3 py-3 text-base font-medium text-slate-900 transition-colors duration-300 hover:bg-blue-50 hover:text-blue-600 xl:px-4"
           >
-            {link.name}
-            <span className="absolute bottom-1.5 left-1/2 h-1 w-8 -translate-x-1/2 origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
+            <span className="relative inline-block">
+              {link.name}
+              <span className="absolute bottom-[-5px] left-0 h-1 w-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
+            </span>
           </a>
         ))}
       </div>

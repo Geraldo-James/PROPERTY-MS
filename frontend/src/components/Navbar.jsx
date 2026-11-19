@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   UserCircle,
   ArrowRight,
@@ -19,22 +20,22 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", icon: Home },
-    { name: "About", icon: Info },
-    { name: "Features", icon: Layers },
-    { name: "Properties", icon: Building2 },
-    { name: "Pricing", icon: CreditCard },
-    { name: "Contact", icon: Phone },
+    { name: "Home", icon: Home, href: "/" },
+    { name: "About", icon: Info, href: "/about" },
+    { name: "Features", icon: Layers, href: "/features" },
+    { name: "Properties", icon: Building2, href: "/properties" },
+    { name: "Pricing", icon: CreditCard, href: "/pricing" },
+    { name: "Contact", icon: Phone, href: "/contact" },
   ];
 
   return (
     <nav className="relative flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8 xl:px-12">
       {/* Logo */}
-      <div className="flex shrink-0 items-center gap-1">
+      <Link to="/" className="flex shrink-0 items-center gap-1">
         <img
           src="../Gradient_Blue_House_Logo_with_Swoosh.png"
           alt="Property-Image Logo"
-          className="h-10 w-12 object-fit sm:h-12 sm:w-14"
+          className="h-10 w-12 object-contain sm:h-12 sm:w-14"
         />
 
         <p className="whitespace-nowrap text-xl font-extrabold text-black sm:text-2xl">
@@ -43,21 +44,21 @@ export function Navbar() {
             MS
           </span>
         </p>
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden items-center gap-1 font-medium text-slate-700 min-[1366px]:flex xl:gap-2">
         {navLinks.map((link) => (
-          <a
+          <Link
             key={link.name}
-            href="#"
+            to={link.href}
             className="group relative flex items-center whitespace-nowrap rounded-2xl px-3 py-3 text-base font-medium text-slate-900 transition-colors duration-300 hover:bg-blue-50 hover:text-blue-600 xl:px-4"
           >
             <span className="relative inline-block">
               {link.name}
               <span className="absolute -bottom-1.25 left-0 h-1 w-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-in-out group-hover:scale-x-100"></span>
             </span>
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -124,11 +125,15 @@ export function Navbar() {
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between border-b border-slate-200 pb-5">
-          <div className="flex items-center gap-1">
+          <Link
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center gap-1"
+          >
             <img
               src="../Gradient_Blue_House_Logo_with_Swoosh.png"
               alt="Property-Image Logo"
-              className="h-10 w-12 object-fit"
+              className="h-10 w-12 object-contain"
             />
 
             <p className="whitespace-nowrap text-xl font-extrabold text-black">
@@ -137,7 +142,7 @@ export function Navbar() {
                 MS
               </span>
             </p>
-          </div>
+          </Link>
 
           <button
             onClick={() => setIsMenuOpen(false)}
@@ -154,9 +159,9 @@ export function Navbar() {
             const Icon = link.icon;
 
             return (
-              <a
+              <Link
                 key={link.name}
-                href="#"
+                to={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 tabIndex={isMenuOpen ? 0 : -1}
                 className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-base font-medium text-slate-800 shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md"
@@ -175,7 +180,7 @@ export function Navbar() {
                   strokeWidth={1.8}
                   className="text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-600"
                 />
-              </a>
+              </Link>
             );
           })}
         </div>

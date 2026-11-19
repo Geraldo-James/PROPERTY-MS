@@ -97,10 +97,10 @@ export default function Home_Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-12 py-14 sm:gap-x-8 lg:grid-cols-12 lg:gap-8">
 
           {/* Brand Information */}
-          <div className="sm:col-span-2 lg:col-span-4">
+          <div className="col-span-2 lg:col-span-4">
 
             <a href="#" className="mb-5 inline-flex items-center gap-2">
               <img
@@ -163,7 +163,7 @@ export default function Home_Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Explore
             </h3>
@@ -187,7 +187,7 @@ export default function Home_Footer() {
           </div>
 
           {/* Services */}
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Our Solutions
             </h3>
@@ -216,7 +216,7 @@ export default function Home_Footer() {
           </div>
 
           {/* Support */}
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Support
             </h3>
@@ -240,7 +240,7 @@ export default function Home_Footer() {
           </div>
 
           {/* Contact Information */}
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               Get in Touch
             </h3>

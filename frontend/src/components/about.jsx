@@ -90,7 +90,7 @@ const platformFeatures = [
 
 function SectionBadge({ children, Icon = Sparkles }) {
   return (
-    <span className="group inline-flex items-center gap-3 rounded-full border border-blue-200/70 bg-blue-100/60 py-1.5 pl-1.5 pr-5 text-sm font-medium tracking-wide text-blue-800 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-100 hover:shadow-[0_8px_22px_rgba(37,99,235,0.14)]">
+    <span className="group inline-flex items-center gap-3 rounded-full border border-blue-100/90 bg-white/90 py-1.5 pl-1.5 pr-5 text-sm font-medium tracking-wide text-[#0B1B3A] shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-[0_8px_22px_rgba(37,99,235,0.14)]">
       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white shadow-md shadow-blue-600/25 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-blue-700">
         <Icon size={21} strokeWidth={2.2} />
       </span>
@@ -148,119 +148,129 @@ function SectionHeading({ badge, title, description, Icon = Sparkles }) {
 export default function AboutPage() {
   return (
     <main className="relative isolate overflow-hidden bg-[#F8FBFF] text-[#0B1B3A]">
-
       {/* Background atmosphere */}
       <div className="pointer-events-none absolute -left-48 top-40 -z-10 h-125 w-125 rounded-full bg-blue-200/25 blur-[120px]" />
       <div className="pointer-events-none absolute -right-48 top-[35%] -z-10 h-125 w-125 rounded-full bg-cyan-200/20 blur-[120px]" />
 
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto grid min-h-162.5 max-w-7xl grid-cols-1 items-center gap-14 px-5 py-16 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:px-12 lg:py-20">
+      {/* ABOUT PAGE INTRODUCTION */}
+      <section className="relative isolate overflow-hidden border-b border-[#D8C5A4]/20 bg-linear-to-br from-[#031735] via-[#08294F] to-[#0B477D]">
+        {/* Background lighting */}
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[#D8C5A4]/15 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-48 -left-32 h-[520px] w-[520px] rounded-full bg-blue-500/25 blur-[120px]" />
+        <div className="pointer-events-none absolute right-[25%] top-[20%] h-72 w-72 rounded-full bg-cyan-400/10 blur-[100px]" />
 
-          {/* Hero content */}
-          <div className="relative z-10">
+        {/* Subtle decorative pattern */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)",
+            backgroundSize: "55px 55px",
+            maskImage:
+              "linear-gradient(to bottom, black, transparent 85%)",
+          }}
+        />
+
+        {/* Right-side decorative Lucide icon composition */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[48%] overflow-hidden lg:block"
+        >
+          {/* Soft glow behind the icon composition */}
+          <div className="absolute right-[12%] top-[18%] h-[390px] w-[390px] rounded-full bg-cyan-300/[0.07] blur-[70px]" />
+
+          {/* Large circular outlines */}
+          <div className="absolute right-[8%] top-[12%] h-[440px] w-[440px] rounded-full border border-white/[0.08]" />
+          <div className="absolute right-[13%] top-[17%] h-[340px] w-[340px] rounded-full border border-[#D8C5A4]/[0.12]" />
+          <div className="absolute right-[18%] top-[22%] h-[240px] w-[240px] rounded-full border border-white/[0.08]" />
+
+          {/* Main property icon */}
+          <div className="absolute right-[23%] top-[27%] flex h-48 w-48 items-center justify-center rounded-[42px] border border-white/15 bg-white/[0.07] text-[#D8C5A4] shadow-[0_20px_70px_rgba(0,0,0,0.15)] backdrop-blur-md">
+            <Building2 size={112} strokeWidth={1.1} />
+          </div>
+
+          {/* Tenant icon card */}
+          <div className="absolute right-[8%] top-[17%] flex h-[76px] w-[76px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.09] text-cyan-200 shadow-lg backdrop-blur-md">
+            <Users size={34} strokeWidth={1.4} />
+          </div>
+
+          {/* Payment icon card */}
+          <div className="absolute bottom-[25%] right-[9%] flex h-[76px] w-[76px] items-center justify-center rounded-2xl border border-[#D8C5A4]/20 bg-[#D8C5A4]/[0.10] text-[#E6D3AF] shadow-lg backdrop-blur-md">
+            <CreditCard size={34} strokeWidth={1.4} />
+          </div>
+
+          {/* Analytics icon card */}
+          <div className="absolute bottom-[18%] right-[40%] flex h-[76px] w-[76px] items-center justify-center rounded-2xl border border-cyan-200/15 bg-cyan-300/[0.08] text-cyan-200 shadow-lg backdrop-blur-md">
+            <BarChart3 size={34} strokeWidth={1.4} />
+          </div>
+
+          {/* House icon card */}
+          <div className="absolute right-[42%] top-[12%] flex h-[62px] w-[62px] items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-white/60 backdrop-blur-md">
+            <House size={29} strokeWidth={1.3} />
+          </div>
+
+          {/* Small decorative details */}
+          <div className="absolute right-[28%] top-[19%] h-2 w-2 rounded-full bg-cyan-200/60" />
+          <div className="absolute bottom-[34%] right-[29%] h-3 w-3 rounded-full bg-[#D8C5A4]/60" />
+          <div className="absolute right-[17%] top-[48%] h-2 w-2 rounded-full bg-white/50" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="max-w-3xl">
             <SectionBadge Icon={House}>
-              Smart property management
+              About PropertyMS
             </SectionBadge>
 
-            <h1 className="mt-7 max-w-162.5 text-[2.8rem] font-extrabold leading-[1.08] tracking-[-0.055em] text-[#0B1B3A] sm:text-5xl lg:text-[4.1rem]">
-              Better management.
-              <br />
-              <span className="bg-linear-to-r from-blue-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Better experiences.
+            <h1 className="mt-7 text-4xl font-extrabold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+              Making property management
+              <span className="block bg-linear-to-r from-[#D8C5A4] via-sky-300 to-cyan-300 bg-clip-text text-transparent">
+                clearer and more connected.
               </span>
             </h1>
 
-            <p className="mt-7 max-w-137.5 text-base leading-8 text-slate-600 sm:text-lg">
-              PropertyMS brings landlords, property managers and tenants
-              together through one organized platform. Manage properties,
-              units, tenancies and payments with greater clarity and ease.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50/85 sm:text-lg">
+              PropertyMS brings the essential parts of property management
+              into one organized platform. We are building a simpler way
+              for landlords, property managers and tenants to manage
+              properties, units, tenancies and payments.
             </p>
-
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href="/properties"
-                className="group inline-flex items-center gap-3 rounded-full bg-linear-to-r from-blue-600 to-sky-500 px-7 py-4 text-sm font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,0.24)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(37,99,235,0.32)]"
-              >
-                Explore PropertyMS
-                <ArrowRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </a>
-
-              <a
-                href="#our-story"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-4 text-sm font-bold text-[#0B1B3A] transition-all duration-300 hover:border-blue-300 hover:bg-blue-50"
-              >
-                Discover our story
-                <ArrowUpRight size={17} />
-              </a>
-            </div>
-
-            {/* Hero benefits */}
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200/80 pt-7">
-              {[
-                "Organized property records",
-                "Simplified payment tracking",
-                "Connected management",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-xs font-medium text-slate-600 sm:text-sm"
-                >
-                  <CheckCircle2 size={16} className="shrink-0 text-blue-500" />
-                  {item}
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Hero visual */}
-          <div className="relative mx-auto w-full max-w-155 lg:ml-auto">
-            <div className="absolute inset-8 rounded-full bg-blue-300/30 blur-[90px]" />
-
-            <div className="relative grid grid-cols-[1.05fr_0.95fr] items-center gap-3 sm:gap-5">
-
-              <div className="relative z-10 -rotate-3 overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_25px_70px_rgba(15,64,130,0.16)]">
-                <ImageFrame
-                  src="/images/about-property.jpg"
-                  alt="Modern residential property"
-                  className="aspect-[0.92/1] w-full"
-                />
-              </div>
-
-              <div className="relative z-20 mt-14 rotate-3 overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_25px_70px_rgba(15,64,130,0.16)] sm:mt-20">
-                <ImageFrame
-                  src="/images/about-manager.jpg"
-                  alt="Property management professional"
-                  className="aspect-[0.82/1] w-full"
-                />
-              </div>
+          {/* Editorial image area */}
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-[1.35fr_0.65fr] sm:items-stretch">
+            <div className="group relative min-h-[240px] overflow-hidden rounded-[28px] border border-blue-100 bg-linear-to-br from-blue-50 via-white to-sky-100 sm:min-h-[320px]">
+              <img
+                src="/images/about-property.jpg"
+                alt="Modern property managed through PropertyMS"
+                loading="lazy"
+                className="h-full min-h-[240px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:min-h-[320px]"
+                onError={(event) => {
+                  event.currentTarget.style.display = "none";
+                }}
+              />
             </div>
 
-            {/* Floating platform message */}
-            <div className="absolute -bottom-5 left-1/2 z-30 w-[90%] -translate-x-1/2 rounded-2xl border border-white/80 bg-white/90 p-4 shadow-[0_15px_45px_rgba(15,64,130,0.13)] backdrop-blur-xl sm:bottom-0 sm:w-[82%] sm:p-5">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                  <Home size={23} />
-                </div>
+            <div className="flex min-h-[220px] flex-col justify-between rounded-[28px] bg-[#071D40] p-7 text-white sm:min-h-[320px] sm:p-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-cyan-300">
+                <HeartHandshake size={26} />
+              </div>
 
-                <div className="min-w-0">
-                  <p className="text-sm font-bold text-[#0B1B3A]">
-                    Everything in one place
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500">
-                    Properties, tenants and payments.
-                  </p>
-                </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+                  Our approach
+                </p>
 
-                <CheckCircle2 className="ml-auto shrink-0 text-emerald-500" size={22} />
+                <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-3xl">
+                  Better organization for everyone involved.
+                </h2>
+
+                <p className="mt-3 text-sm leading-7 text-blue-100/80">
+                  Bringing property information and everyday management
+                  activities together in one connected place.
+                </p>
               </div>
             </div>
-
-            <div className="absolute -left-3 top-[40%] z-0 h-11 w-11 rounded-xl bg-linear-to-br from-blue-400 to-cyan-300 shadow-lg shadow-blue-300/30 sm:-left-5" />
-            <div className="absolute -right-2 top-3 z-0 h-9 w-9 rounded-xl bg-linear-to-br from-blue-400 to-cyan-300 shadow-lg shadow-blue-300/30" />
           </div>
         </div>
       </section>
@@ -268,7 +278,6 @@ export default function AboutPage() {
       {/* USER PROBLEM / BENEFITS */}
       <section className="border-y border-blue-100/80 bg-white/75 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
               <SectionBadge Icon={HeartHandshake}>
@@ -276,13 +285,14 @@ export default function AboutPage() {
               </SectionBadge>
 
               <h2 className="mt-5 max-w-lg text-3xl font-extrabold leading-tight tracking-[-0.04em] sm:text-4xl">
-                Property management should feel simpler.
+                Spend less time managing records. More time managing what matters.
               </h2>
 
               <p className="mt-5 max-w-lg text-sm leading-7 text-slate-600 sm:text-base">
-                Managing properties can involve many moving parts. PropertyMS
-                helps bring essential information and everyday management
-                activities into one connected experience.
+                From keeping property details in order to following rent
+                payments and tenancy records, PropertyMS brings the everyday
+                tasks of property management into one clearer, more connected
+                workspace.
               </p>
             </div>
 
@@ -356,10 +366,12 @@ export default function AboutPage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                 <Sparkles size={23} />
               </div>
+
               <div>
                 <p className="text-sm font-bold text-[#0B1B3A]">
                   Built around people
                 </p>
+
                 <p className="mt-1 text-xs text-slate-500">
                   Designed for everyday needs
                 </p>
@@ -374,27 +386,28 @@ export default function AboutPage() {
           </SectionBadge>
 
           <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-[-0.045em] sm:text-4xl lg:text-[2.8rem]">
-            A better way to manage the places people call home.
+            Property management, built around the people behind every property.
           </h2>
 
           <div className="mt-6 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
             <p>
-              Property management is about more than buildings. It is about
-              people, responsibilities, records and the relationships that
-              make properties work.
+              Every property has people behind it: landlords making
+              investments, tenants looking for a place to call home and
+              managers handling important day-to-day responsibilities.
             </p>
 
             <p>
-              Yet managing these responsibilities can become complicated
-              when information is scattered across different records and
-              processes. Keeping track of units, tenants, tenancies and
-              payments should not have to feel overwhelming.
+              But when property details, tenant information, tenancy records
+              and payment history are spread across different places,
+              keeping everything under control becomes harder than it needs
+              to be.
             </p>
 
             <p>
-              That is why we are building PropertyMS: to make everyday
-              property management more organized, accessible and efficient
-              through technology.
+              PropertyMS is being built to bring these essential activities
+              together, giving property owners and managers a more organized
+              way to handle their work and helping create a smoother
+              experience for everyone involved.
             </p>
           </div>
 
@@ -420,12 +433,13 @@ export default function AboutPage() {
             </SectionBadge>
 
             <h2 className="mt-5 text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl">
-              What moves us forward
+              Making property management work better for everyone.
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-blue-100/80 sm:text-base">
-              Every part of PropertyMS is guided by a commitment to making
-              property management more meaningful and manageable.
+              We are guided by a clear purpose: make managing properties
+              easier to understand, simpler to organize and more dependable
+              in everyday use.
             </p>
           </div>
 
@@ -466,8 +480,8 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <SectionHeading
           badge="What we believe in"
-          title="The principles behind everything we do."
-          description="Our values shape the way we build, improve and deliver the PropertyMS experience."
+          title="The standards we bring to every experience."
+          description="Simplicity, trust, accountability and continuous improvement shape how we build PropertyMS and how we want people to experience it."
           Icon={Gem}
         />
 
@@ -506,8 +520,8 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <SectionHeading
             badge="Everything working together"
-            title="Everything connected. Everything more organized."
-            description="Bring the essential parts of property management together with tools designed to make everyday work easier."
+            title="One platform for the work behind every property."
+            description="From property and unit records to tenant details, rent payments and reports, PropertyMS brings the essential parts of property management into one connected place."
             Icon={Layers3}
           />
 
@@ -549,10 +563,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FINAL CALL TO ACTION — PRESERVED DESIGN */}
+      {/* FINAL CALL TO ACTION */}
       <section className="px-5 pb-12 pt-12 sm:px-8 sm:pb-16 lg:px-10">
         <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 overflow-hidden rounded-[25px] bg-linear-to-r from-[#031A3D] via-[#06366D] to-[#0875E8] px-6 py-9 text-white shadow-[0_18px_45px_rgba(3,26,61,0.16)] sm:rounded-[30px] sm:px-9 sm:py-11 lg:flex-row lg:items-center lg:px-8 lg:py-10">
-
           {/* Decorative background */}
           <div className="pointer-events-none absolute -right-12 -top-28 h-72 w-72 rounded-full border border-blue-300/20" />
           <div className="pointer-events-none absolute -right-5 -top-20 h-64 w-64 rounded-full border border-blue-300/20" />
